@@ -1,24 +1,31 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-type tile struct {
+type Vector struct {
+	x int
+	y int
+}
+type Tile struct {
 	border [][]int // side patern clockwise N:0 E:1 S:2 W:3
+	img    string
 }
 
-type cell struct {
+type Cell struct {
 	border    [][]int // side patern clockwise N:0 E:1 S:2 W:3
+	tileSet   []Tile  // all possible tiles
 	pix       int     // pixilation of edge
 	collapsed bool    // solved
+	pos       Vector  // position on grid
 }
 
-// func newPerson(name string) *person {
-
-// 	p := person{name: name}
-// 	p.age = 42
-// 	return &p
-// }
+func gridInit(n int) string {
+	return "a"
+}
 
 func main() {
-	fmt.Println("a")
+
+	fmt.Println(gridInit(3))
 }
